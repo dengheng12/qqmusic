@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html,
+body,
+.container {
+    width: 100%;
+    height: 100%;
+    background: red;
+}
+
+header {
+    width: 100%;
+    height: 50px;
+    background: #000;
+    box-sizing: border-box;
+    padding: 14.5px;
+}
+
+header .logo {
+    float: left;
+    width: 78px;
+    height: 21px;
+    margin-left: 5.5px;
+}
+
+header .logo img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
+
+header .logo img:hover {
+    opacity: 1;
+}
+
+header .register {
+    float: right;
+}
+
+header .register ul {
+    width: 100px;
+    height: 21px;
+    margin-right: 5.5px;
+}
+
+header .register ul li {
+    float: left;
+    width: 50%;
+    height: 100%;
+    line-height: 21px;
+    text-align: center;
+    color: #fff;
+    opacity: 0.5;
+}
+
+header .register ul li:hover {
+    opacity: 1;
+}
+
+.content {
+    width: 100%;
+    background: brown;
+    position: fixed;
+    top: 50px;
+    bottom: 60px;
+}
+
+.content .content_in {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    background: gray;
+}
+
+.content_in .content_left {
+    width: 800px;
+    height: 100%;
+    float: left;
+    background: cornflowerblue;
+}
+
+.content_in .content_left .toolbar {
+    width: 100%;
+    height: 40px;
+    background: #000;
+}
+
+.content_left .toolbar .toolbar_list {
+    width: 15%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    box-sizing: border-box;
+    border: 1px #FFF solid;
+    border-radius: 2px;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.toolbar .toolbar_list i {
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background: url(../images/icon_sprite.png) no-repeat 0 0;
+    vertical-align: -5px;
+    margin-right: 5px;
+}
+
+.toolbar .toolbar_list:nth-child(1) i {
+    background-position: -60px -20px;
+}
+
+.toolbar .toolbar_list:nth-child(2) i {
+    background-position: -20px -20px;
+}
+
+.toolbar .toolbar_list:nth-child(3) i {
+    background-position: -40px -240px;
+}
+
+.toolbar .toolbar_list:nth-child(4) i {
+    background-position: -100px -20px;
+}
+
+.toolbar .toolbar_list:nth-child(5) i {
+    background-position: -40px -300px;
+}
+
+.content_left .toolbar .toolbar_list:hover {
+    opacity: 1;
+}
+
+.content_left .content_list .music_con li {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.content_list .music_con li>div {
+    float: left;
+    line-height: 50px;
+    color: #fff;
+    opacity: 0.5;
+}
+
+.content_list .music_con li .list_check {
+    width: 50px;
+    height: 100%;
+    background: orangered;
+    text-align: center;
+}
+
+.content_list .music_con li .list_check i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #fff;
+}
+
+.music_con li .list_checked i {
+    background: url(../images/icon_sprite.png) no-repeat -60px -80px;
+}
+
+.content_list .music_con li .list_number {
+    width: 20px;
+    height: 100%;
+    background: green;
+}
+
+.content_list .music_con li .list_name {
+    width: 50%;
+    height: 100%;
+    background: gray;
+}
+
+.list_name .list_menu {
+    float: right;
+    margin-right: 20px;
+    display: none;
+}
+
+.list_name .list_menu a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    vertical-align: -11px;
+    background: url(../images/icon_list_menu.png) no-repeat 0 0;
+}
+
+.list_name .list_menu a:nth-child(1) {
+    background-position: -120px 0;
+}
+
+.list_name .list_menu a:nth-child(2) {
+    background-position: -120px -80px;
+}
+
+.list_name .list_menu a:nth-child(3) {
+    background-position: -120px -120px;
+}
+
+.list_name .list_menu a:nth-child(14) {
+    background-position: -120px -40px;
+}
+
+.content_list .music_con li .list_singer {
+    width: 20%;
+    height: 100%;
+}
+
+.content_list .music_con li .list_time a {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    margin-top: 6px;
+    background: url(../images/icon_list_menu.png) no-repeat -120px -160px;
+    display: none;
+    float: left;
+}
+
+.content_in .content_right {
+    width: 400px;
+    height: 100%;
+    float: left;
+    background: green;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    background: yellow;
+}

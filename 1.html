@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jq study</title>
+    <script src="./jquery/jquery-1.10.1.min.js"></script>
+
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .wrap {
+        width: 300px;
+        margin: 100px auto 0;
+    }
+    
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #c0c0c0;
+        width: 300px;
+    }
+    
+    th,
+    td {
+        border: 1px solid #d0d0d0;
+        color: #404060;
+        padding: 10px;
+    }
+    
+    th {
+        background-color: #09c;
+        font: bold 16px "微软雅黑";
+        color: #fff;
+    }
+    
+    td {
+        font: 14px "微软雅黑";
+    }
+    
+    tbody tr {
+        background-color: #f0f0f0;
+        text-align: center;
+    }
+    
+    tbody tr:hover {
+        cursor: pointer;
+        background-color: #fafafa;
+    }
+</style>
+
+<body>
+    <!-- <div>
+        <img src="https://img.alicdn.com/imgextra/i2/27688957/O1CN01c4eSpi2G2MAYCWgnK_!!0-saturn_solar.jpg_220x220.jpg_.webp" alt="" />
+    </div> -->
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll" />
+                    </th>
+                    <th>菜名</th>
+                    <th>饭店</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>红烧肉</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>西红柿鸡蛋</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>红烧狮子头</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>日式肥牛</td>
+                    <td>田老师</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    //1,jq 和js 区别
+    // js 含有相同的操作，后面的会覆盖起前面的  jq按顺序执行
+    // js 等dom元素加载完成，img也加载完成  jq 等到dom元素加载完成之后就执行
+    // window.onload = function() {
+    //     alert(111);
+    //     var img = document.getElementsByTagName("img")[0];
+    //     var width = getComputedStyle(img).width;
+
+    //     console.log(width)
+    // }
+    // $(document).ready(function() {
+    //     console.log("jq")
+    //     var width = $("img").width();
+    //     console.log(width)
+    // })
+
+    //静态方法和实例化方法
+    //静态方法是类直接声明的，可以直接使用,通过类名调用
+    // 实例方法 是加在原型上的 prototype   实例化的对象使用
+
+    // function A() {
+    //     // alert("A")
+    // }
+    // A.staticA = function() {
+    //     alert("statica")
+    // }
+    // A.staticA();
+    // A.prototype.instanceFunc = function() {
+    //     alert("prototype")
+    // }
+    // var a = new A();
+    // a.instanceFunc()
+
+    //数组和伪数组
+    var arr = [1, 3, 5, 7, 9];
+    var arr1 = {
+        0: 1,
+        1: 3,
+        length: 2
+    };
+    var obj = {
+        name: '清查',
+        age: 18,
+    };
+    // arr.forEach((item, index) => {
+    //     console.log(index, item)
+    // })
+
+    // arr1.forEach((item, index) => {
+    //     console.log(index, item)  报错  is not a function
+    // })
+
+    // each jq的静态方法  既可以遍历数组，也可以遍历对象和伪数组
+    var each = $.each(arr1, (index, item) => {
+        console.log(item, index);
+    });
+    // $.each(arr1, (index, item) => { //先传索引，后传value
+    //     console.log(index, item)
+    // })
+    // $.each(obj, (index, item) => { //先传索引，后传value
+    //     console.log(index, item)
+    // })
+    var map = $.map(arr1, (index, item) => {
+        console.log(index, item); //先传索引 ，后传value
+        return index + item
+    });
+    //map 和 each 都可以遍历数组和伪数组
+    // map 默认返回空数组  可以对数组和伪数组进行相关操作，返回一个新的数组
+    // each 返回原元素
+    console.log(each)
+    console.log(map)
+        //其他静态方法 
+        // $.trim  去除首尾空格
+        // $.isWindow  判断是否为window 对象 返回Boolean
+        // $.isArray    $.isFunction
+        //$.isFunction(jQuery) true
+
+    // 属性 和属性节点   任何对象都有属性，只有dom 对象才有属性节点
+    // 属性  对象上保存的变量就是属性
+    //操作属性
+    // 1. 对象.属性名称=值   对象.属性名称
+    // 2. 对象['属性名称']=值  对象['属性名称']
+    // 属性节点   在编写html代码时，html标签中添加的属性就是属性节点
+    // 浏览器中找到img 的attributes 所有内容  只用DOM对象才有属性节点
+    // 操作属性节点  setAttribute("属性名称","值")设置   getAttribute("属性名称")
+    $("#j_cbAll").on("click", function() {
+        var checked = $(this).prop("checked");
+        console.log(checked)
+        $("#j_tb input[type='checkbox']").prop("checked", checked)
+    })
+    $("#j_tb input[type='checkbox']").on("click", function() {
+        console.log(111)
+        var checked = true;
+        $("#j_tb input[type='checkbox']").each(function(index, item) {
+            console.log(index, item.checked)
+            if (!item.checked) {
+                checked = false
+            }
+
+
+        });
+        $('#j_cbAll').prop("checked", checked);
+
+    })
+</script>
+
+</html>
