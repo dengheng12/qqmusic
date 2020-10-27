@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+}
+
 li {
     list-style: none;
 }
@@ -84,6 +91,7 @@ header .register ul li:hover {
 }
 
 .content_in .content_left {
+    position: relative;
     width: 800px;
     height: 100%;
     float: left;
@@ -150,6 +158,14 @@ header .register ul li:hover {
     user-select: none;
 }
 
+.content_list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40px;
+    bottom: 0;
+}
+
 .content_list .music_con li>div {
     float: left;
     line-height: 50px;
@@ -213,7 +229,7 @@ header .register ul li:hover {
     background-position: -120px -120px;
 }
 
-.list_name .list_menu a:nth-child(14) {
+.list_name .list_menu a:nth-child(4) {
     background-position: -120px -40px;
 }
 
@@ -239,6 +255,55 @@ header .register ul li:hover {
     background: green;
 }
 
+.song_info {
+    width: 100%;
+    text-align: center;
+}
+
+.song_info .song_pic {
+    text-align: left;
+    display: inline-block;
+    width: 201px;
+    height: 180px;
+    background: url(../images/album_cover_player.png) no-repeat 0 0;
+}
+
+.song_info .song_pic img {
+    width: 180px;
+    height: 180px;
+}
+
+.song_info>div {
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 30px;
+}
+
+.song_info>div a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.song_info .song_lrc {
+    width: 100%;
+    text-align: center;
+}
+
+.song_lrc {
+    width: 100%;
+    text-align: center;
+}
+
+.song_lrc .lrc_info {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.song_lrc .lrc_info li {
+    width: 100%;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 40px;
+}
+
 footer {
     position: absolute;
     left: 0;
@@ -246,4 +311,8 @@ footer {
     bottom: 0;
     height: 60px;
     background: yellow;
+}
+
+.mCSB_1_scrollbar .mCSB_dragger .mCSB_draggerRail {
+    width: 4px;
 }
