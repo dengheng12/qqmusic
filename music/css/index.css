@@ -233,6 +233,10 @@ header .register ul li:hover {
     background-position: -120px -40px;
 }
 
+.list_name .list_menu .list_menu_play2{
+    background-position: -80px -200px !important;
+}
+
 .content_list .music_con li .list_singer {
     width: 20%;
     height: 100%;
@@ -244,8 +248,8 @@ header .register ul li:hover {
     height: 36px;
     margin-top: 6px;
     background: url(../images/icon_list_menu.png) no-repeat -120px -160px;
-    display: none;
     float: left;
+    display: none;
 }
 
 .content_in .content_right {
